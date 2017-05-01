@@ -1,0 +1,2 @@
+# PickupMinigame
+prototype short minigame 
