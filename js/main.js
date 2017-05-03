@@ -1,8 +1,8 @@
-var WheelGame = WheelGame || {};
+var FillGame = FillGame || {};
 
-WheelGame.game = new Phaser.Game(640, 400, Phaser.AUTO);
+FillGame.game = new Phaser.Game(640, 400, Phaser.AUTO);
 
-WheelGame.game.state.add('Preload', WheelGame.PreloadState);
-WheelGame.game.state.add('Game', WheelGame.GameState);
+FillGame.game.state.add('Preload', FillGame.PreloadState);
+FillGame.game.state.add('Game', FillGame.GameState);
 
-WheelGame.game.state.start('Preload');
+FillGame.game.state.start('Preload');
