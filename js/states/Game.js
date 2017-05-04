@@ -15,6 +15,9 @@ FillGame.GameState = {
         this.bar = this.add.sprite(this.game.world.width * 0.5, this.outline.bottom - 5, 'fillBar');
         this.bar.anchor.setTo(0.5, 1);
         this.background.sendToBack();
+        this.target = this.add.sprite(this.outline.x, this.outline.top + 5, 'target');
+        this.target.anchor.setTo(0.5, 0);
+        this.bar.bringToTop();
         this.outline.bringToTop();
     },
     update: function(){
@@ -27,7 +30,7 @@ FillGame.GameState = {
         if(this.bar.height > 0 && this.cursors.up.isUp){
             this.pressed = true;
         } 
-        if(this.cursors.up.isUp && (this.barHeight > this.outline.height - 13 && this.barHeight < this.outline.height - 6)){
+        if(this.cursors.up.isUp && (this.bar.top < this.target.bottom && this.bar.top > this.outline.top)){
             console.log('You win!');
         }else if (this.cursors.up.isDown && this.barHeight >= this.outline.height - 6){
             console.log('You lose!');
